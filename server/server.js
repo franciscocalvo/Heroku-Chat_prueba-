@@ -6,6 +6,8 @@ app.get('/', function(req, res){
   res.sendfile('public/html/index.html');
 });
 
+app.static("public");
+
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){
     io.emit('chat message', msg);
